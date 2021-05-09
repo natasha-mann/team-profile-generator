@@ -1,4 +1,5 @@
 const getAnswers = require("./getAnswers");
+const Manager = require("./employees/manager");
 
 const createManager = async () => {
   const managerQuestions = [
@@ -23,7 +24,8 @@ const createManager = async () => {
   ];
 
   const managerAnswers = await getAnswers(managerQuestions);
-  return;
+
+  return new Manager(managerAnswers);
 };
 
 module.exports = createManager;

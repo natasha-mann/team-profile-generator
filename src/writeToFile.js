@@ -1,5 +1,5 @@
 const writeToFile = (html) => {
-  console.log(html);
+  return;
 };
 
 module.exports = writeToFile;
