@@ -1,6 +1,8 @@
 const getAnswers = require("./getAnswers");
+const generateHTML = require("./utils/generateHTML");
+const writeToFile = require("./writeToFile");
 
-const app = () => {
+const app = async () => {
   console.log("App started");
 
   const initialQuestion = [
@@ -10,7 +12,7 @@ const app = () => {
     },
   ];
 
-  const answers = getAnswers(initialQuestion);
+  const answers = await getAnswers(initialQuestion);
 
   // const teamMembers = getAllTeamMembers();
 
