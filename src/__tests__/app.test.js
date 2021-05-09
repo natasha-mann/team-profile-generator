@@ -1,12 +1,12 @@
 const inquirer = require("inquirer");
 
-const app = require("./app");
-const generateHTML = require("./utils/generateHTML.js");
-const writeToFile = require("./writeToFile");
+const app = require("../app");
+const generateHTML = require("../utils/generateHTML.js");
+const writeToFile = require("../writeToFile");
 
 jest.mock("inquirer");
-jest.mock("./utils/generateHTML.js");
-jest.mock("./writeToFile.js");
+jest.mock("../utils/generateHTML.js");
+jest.mock("../writeToFile.js");
 
 describe("app", () => {
   const inquirerSpy = jest.spyOn(inquirer, "prompt");

@@ -1,4 +1,4 @@
-const createManager = require("./createManager");
+const createManager = require("../createManager");
 
 describe("createManager", () => {
   test("should ", () => {});

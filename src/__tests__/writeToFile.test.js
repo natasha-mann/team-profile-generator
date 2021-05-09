@@ -1,4 +1,4 @@
-const writeToFile = require("./writeToFile");
+const writeToFile = require("../writeToFile");
 
 describe("writeToFile", () => {
   test("should ", () => {});
