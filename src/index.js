@@ -1,1 +1,3 @@
-console.log("hello");
+const app = require("./app");
+
+app();
