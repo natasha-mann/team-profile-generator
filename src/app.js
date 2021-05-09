@@ -20,6 +20,8 @@ const app = async () => {
 
   const teamMembers = await getAllTeamMembers();
 
+  console.log(teamMembers);
+
   const html = generateHTML({ teamName, manager, teamMembers });
 
   writeToFile(html);

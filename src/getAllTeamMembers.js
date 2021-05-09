@@ -1,5 +1,6 @@
 const getAnswers = require("./getAnswers");
 const createEngineer = require("./createEngineer");
+const createIntern = require("./createIntern");
 
 const promptQuestionAndGetAnswers = async () => {
   const questions = [
