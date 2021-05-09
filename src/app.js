@@ -2,6 +2,7 @@ const getAnswers = require("./getAnswers");
 const generateHTML = require("./utils/generateHTML");
 const writeToFile = require("./writeToFile");
 const createManager = require("./createManager");
+const getAllTeamMembers = require("./getAllTeamMembers");
 
 const app = async () => {
   console.log("App started");
