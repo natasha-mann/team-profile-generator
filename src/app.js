@@ -10,13 +10,13 @@ const app = () => {
     },
   ];
 
-  const { teamName } = getAnswers(initialQuestion);
+  const answers = getAnswers(initialQuestion);
 
   // const teamMembers = getAllTeamMembers();
 
-  // const html = generateHtmL({ teamName, teamMembers });
+  const html = generateHTML(answers);
 
-  // writeToFile(html);
+  writeToFile(html);
 };
 
 module.exports = app;
