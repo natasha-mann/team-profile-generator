@@ -1,4 +1,128 @@
-const generateHTML = (answers) => {
+const Engineer = require("../employees/engineer");
+const Intern = require("../employees/intern");
+
+const generateManagerCard = (manager) => {
+  return `
+  <div
+        class="card m-2 shadow p-3 mb-5 bg-body rounded"
+        style="width: 20rem"
+      >
+        <div class="card-header text-center">
+          <i class="fas fa-user-alt fa-2x pt-2"></i>
+          <h3 class="p-2">Manager</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-center pb-3 pt-2">${manager.name}</h4>
+          <ul class="list-group mx-3 mb-3">
+            <li class="list-group-item fw-bold">
+              Employee ID: <span class="fw-normal">${manager.employeeID}</span>
+            </li>
+            <li class="list-group-item fw-bold">
+              Office Number: <span class="fw-normal">${manager.officeNumber}</span>
+            </li>
+            <li class="list-group-item fw-bold">
+              Email:
+              <span class="fw-normal"
+                ><a href="mailto: ${manager.email}"
+                  >${manager.email}</a
+                ></span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+  `;
+};
+
+const generateEngineerCard = (teamMember) => {
+  return `
+  <div
+  class="card m-2 shadow p-3 mb-5 bg-body rounded"
+  style="width: 20rem"
+>
+  <div class="card-header text-center">
+    <i class="fas fa-laptop-code fa-2x pt-2"></i>
+    <h3 class="p-2">Engineer</h3>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title text-center pb-3 pt-2">${teamMember.name}</h4>
+    <ul class="list-group mx-3 mb-3">
+      <li class="list-group-item fw-bold">
+        Employee ID: <span class="fw-normal">${teamMember.employeeID}</span>
+      </li>
+      <li class="list-group-item fw-bold">
+        GitHub:
+        <span class="fw-normal"
+          ><a href="https://www.github.com/${teamMember.github}"
+            >${teamMember.github}</a
+          ></span
+        >
+      </li>
+      <li class="list-group-item fw-bold">
+        Email:
+        <span class="fw-normal"
+          ><a href="mailto: ${teamMember.email}"
+            >${teamMember.email}</a
+          ></span
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+  `;
+};
+
+const generateInternCard = (teamMember) => {
+  return `
+  <div
+        class="card m-2 shadow p-3 mb-5 bg-body rounded"
+        style="width: 20rem"
+      >
+        <div class="card-header text-center">
+          <i class="fas fa-user-graduate fa-2x pt-2"></i>
+          <h3 class="p-2">Intern</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-center pb-3 pt-2">${teamMember.name}</h4>
+          <ul class="list-group mx-3 mb-3">
+            <li class="list-group-item fw-bold">
+              Employee ID: <span class="fw-normal">${teamMember.employeeID}</span>
+            </li>
+            <li class="list-group-item fw-bold">
+              School: <span class="fw-normal">${teamMember.school}</span>
+            </li>
+            <li class="list-group-item fw-bold">
+              Email:
+              <span class="fw-normal"
+                ><a href="mailto: ${teamMember.email}"
+                  >${teamMember.email}</a
+                ></span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+  `;
+};
+
+const generateHTML = ({ teamName, manager, teamMembers }) => {
+  const managerCard = generateManagerCard(manager);
+
+  const generateCard = (teamMember) => {
+    if (teamMember instanceof Engineer) {
+      return generateEngineerCard(teamMember);
+    }
+
+    if (teamMember instanceof Intern) {
+      return generateInternCard(teamMember);
+    }
+  };
+  const teamCards = teamMembers.map(generateCard);
+
+  const cardString = managerCard + teamCards;
+
+  console.log(cardString);
+
   return `
   <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +144,7 @@ const generateHTML = (answers) => {
   </head>
   <body>
     <header class="text-center p-4 bg-light">
-      <h1><i class="fas fa-users"></i>${answers.teamName}</h1>
+      <h1><i class="fas fa-users"></i>${teamName.teamName}</h1>
     </header>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
