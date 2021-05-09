@@ -13,13 +13,13 @@ const app = async () => {
     },
   ];
 
-  const answers = await getAnswers(initialQuestion);
+  const teamName = await getAnswers(initialQuestion);
 
   const manager = await createManager();
 
-  // const teamMembers = await getAllTeamMembers();
+  const teamMembers = await getAllTeamMembers();
 
-  const html = generateHTML(answers);
+  const html = generateHTML({ teamName, manager, teamMembers });
 
   writeToFile(html);
 };
