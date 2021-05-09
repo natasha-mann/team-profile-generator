@@ -1,6 +1,7 @@
 const getAnswers = require("./getAnswers");
 const generateHTML = require("./utils/generateHTML");
 const writeToFile = require("./writeToFile");
+const createManager = require("./createManager");
 
 const app = async () => {
   console.log("App started");
@@ -14,7 +15,9 @@ const app = async () => {
 
   const answers = await getAnswers(initialQuestion);
 
-  // const teamMembers = getAllTeamMembers();
+  const manager = await createManager();
+
+  // const teamMembers = await getAllTeamMembers();
 
   const html = generateHTML(answers);
 
