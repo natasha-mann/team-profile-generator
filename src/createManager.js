@@ -4,7 +4,7 @@ const createManager = async () => {
   const managerQuestions = [
     {
       message: "What is the name of the team manager?",
-      name: "managerName",
+      name: "name",
     },
     {
       type: "number",
@@ -23,7 +23,7 @@ const createManager = async () => {
   ];
 
   const managerAnswers = await getAnswers(managerQuestions);
-  return answers;
+  return;
 };
 
 module.exports = createManager;
