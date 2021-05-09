@@ -105,7 +105,7 @@ const generateInternCard = (teamMember) => {
   `;
 };
 
-const generateHTML = ({ teamName, manager, teamMembers }) => {
+const generateHTML = (teamName, manager, teamMembers) => {
   const managerCard = generateManagerCard(manager);
 
   const generateCard = (teamMember) => {
@@ -120,8 +120,6 @@ const generateHTML = ({ teamName, manager, teamMembers }) => {
   const teamCards = teamMembers.map(generateCard);
 
   const cardString = managerCard + teamCards;
-
-  console.log(cardString);
 
   return `
   <!DOCTYPE html>
@@ -144,8 +142,13 @@ const generateHTML = ({ teamName, manager, teamMembers }) => {
   </head>
   <body>
     <header class="text-center p-4 bg-light">
-      <h1><i class="fas fa-users"></i>${teamName.teamName}</h1>
+      <h1><i class="fas fa-users"></i>${teamName}</h1>
     </header>
+    <div class="d-flex justify-content-around flex-wrap mt-5 m-3">
+
+${cardString}
+
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"

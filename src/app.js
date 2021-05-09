@@ -12,19 +12,26 @@ const app = async () => {
       message: "What is the name of your team?",
       name: "teamName",
     },
+    {
+      message:
+        "What would you like to name your HTML file? **Please don't include the .html",
+      name: "fileName",
+    },
   ];
 
-  const teamName = await getAnswers(initialQuestion);
+  const initialAnswers = await getAnswers(initialQuestion);
 
   const manager = await createManager();
 
   const teamMembers = await getAllTeamMembers();
 
-  console.log(teamMembers);
+  const generatedHTML = generateHTML(
+    initialAnswers.teamName,
+    manager,
+    teamMembers
+  );
 
-  const html = generateHTML({ teamName, manager, teamMembers });
-
-  writeToFile(html);
+  writeToFile(initialAnswers.fileName, generatedHTML);
 };
 
 module.exports = app;
