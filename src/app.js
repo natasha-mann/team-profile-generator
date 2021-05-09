@@ -1,3 +1,5 @@
+const getAnswers = require("./getAnswers");
+
 const app = () => {
   console.log("App started");
 
@@ -10,11 +12,11 @@ const app = () => {
 
   const { teamName } = getAnswers(initialQuestion);
 
-  const teamMembers = getAllTeamMembers();
+  // const teamMembers = getAllTeamMembers();
 
-  const html = generateHtmL({ teamName, teamMembers });
+  // const html = generateHtmL({ teamName, teamMembers });
 
-  writeToFile(html);
+  // writeToFile(html);
 };
 
 module.exports = app;
