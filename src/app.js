@@ -1,5 +1,5 @@
 const app = () => {
-  console.log("app started");
+  console.log("App started");
 
   const initialQuestion = [
     {
