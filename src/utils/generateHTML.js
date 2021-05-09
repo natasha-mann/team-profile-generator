@@ -4,10 +4,12 @@ const Intern = require("../employees/intern");
 const generateManagerCard = (manager) => {
   return `
   <div
-        class="card m-2 shadow p-3 mb-5 bg-body rounded"
-        style="width: 20rem"
+        class="card m-2 shadow mb-5 bg-body rounded"
+        style="width: 20rem; background-color: #ebf7ff !important"
       >
-        <div class="card-header text-center">
+        <div 
+          class="card-header text-center text-light"
+          style="background-color: #1b4965">
           <i class="fas fa-user-alt fa-2x pt-2"></i>
           <h3 class="p-2">Manager</h3>
         </div>
@@ -37,10 +39,12 @@ const generateManagerCard = (manager) => {
 const generateEngineerCard = (teamMember) => {
   return `
   <div
-  class="card m-2 shadow p-3 mb-5 bg-body rounded"
-  style="width: 20rem"
+  class="card m-2 shadow mb-5 bg-body rounded"
+  style="width: 20rem; background-color: #ebf7ff !important"
 >
-  <div class="card-header text-center">
+  <div 
+    class="card-header text-center text-light"
+    style="background-color: #721d42">
     <i class="fas fa-laptop-code fa-2x pt-2"></i>
     <h3 class="p-2">Engineer</h3>
   </div>
@@ -75,10 +79,12 @@ const generateEngineerCard = (teamMember) => {
 const generateInternCard = (teamMember) => {
   return `
   <div
-        class="card m-2 shadow p-3 mb-5 bg-body rounded"
-        style="width: 20rem"
+        class="card m-2 shadow mb-5 bg-body rounded"
+        style="width: 20rem; background-color: #ebf7ff !important"
       >
-        <div class="card-header text-center">
+        <div 
+          class="card-header text-center text-light"
+          style="background-color: #e07a5f">
           <i class="fas fa-user-graduate fa-2x pt-2"></i>
           <h3 class="p-2">Intern</h3>
         </div>
@@ -141,8 +147,11 @@ const generateHTML = (teamName, manager, teamMembers) => {
     />
   </head>
   <body>
-    <header class="text-center p-4 bg-light">
-      <h1><i class="fas fa-users"></i>${teamName}</h1>
+    <header 
+      class="text-center p-4"
+      style="background-color: #62b6cb !important"
+      >
+      <h1><i class="fas fa-users px-4"></i>${teamName}</h1>
     </header>
     <div class="d-flex justify-content-around flex-wrap mt-5 m-3">
 
