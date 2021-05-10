@@ -125,7 +125,8 @@ const generateHTML = (teamName, manager, teamMembers) => {
   };
   const teamCards = teamMembers.map(generateCard);
 
-  const cardString = managerCard + teamCards;
+  const cardString = managerCard + teamCards.join("");
+  console.log(cardString);
 
   return `
   <!DOCTYPE html>
