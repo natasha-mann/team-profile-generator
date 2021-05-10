@@ -1,5 +1,5 @@
 const getAnswers = require("./getAnswers");
-const Engineer = require("./employees/engineer");
+const Engineer = require("./lib/engineer");
 
 const createEngineer = async () => {
   const engineerQuestions = [

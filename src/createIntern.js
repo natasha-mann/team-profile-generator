@@ -1,5 +1,5 @@
 const getAnswers = require("./getAnswers");
-const Intern = require("./employees/intern");
+const Intern = require("./lib/intern");
 
 const createIntern = async () => {
   const internQuestions = [

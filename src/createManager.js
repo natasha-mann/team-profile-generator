@@ -1,5 +1,5 @@
 const getAnswers = require("./getAnswers");
-const Manager = require("./employees/manager");
+const Manager = require("./lib/manager");
 
 const createManager = async () => {
   const managerQuestions = [

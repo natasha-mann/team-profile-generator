@@ -1,5 +1,5 @@
-const Engineer = require("../employees/engineer");
-const Intern = require("../employees/intern");
+const Engineer = require("../lib/engineer");
+const Intern = require("../lib/intern");
 
 const generateManagerCard = (manager) => {
   return `
