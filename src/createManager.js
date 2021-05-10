@@ -8,21 +8,17 @@ const createManager = async () => {
       name: "name",
     },
     {
-      type: "number",
       message: "What is the manager's employee ID number?",
       name: "employeeID",
       validate: function (employeeID) {
-        const regex = /^[0-9]+$/;
-        return regex.test(employeeID);
+        return /^[0-9]+$/.test(employeeID) || "Please enter a number";
       },
     },
     {
-      type: "number",
       message: "What is the manager's office number?",
       name: "officeNumber",
       validate: function (officeNumber) {
-        const regex = /^[0-9]+$/;
-        return regex.test(officeNumber);
+        return /^[0-9]+$/.test(officeNumber) || "Please enter a number";
       },
     },
     {

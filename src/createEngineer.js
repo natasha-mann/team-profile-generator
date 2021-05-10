@@ -8,12 +8,10 @@ const createEngineer = async () => {
       name: "name",
     },
     {
-      type: "number",
       message: "What is the engineer's employee ID number?",
       name: "employeeID",
       validate: function (employeeID) {
-        const regex = /^[0-9]+$/;
-        return regex.test(employeeID);
+        return /^[0-9]+$/.test(employeeID) || "Please enter a number";
       },
     },
     {
