@@ -33,7 +33,7 @@ describe("Intern class", () => {
     });
 
     it("should get the role of the employee", () => {
-      const engineer = new Intern(mockAnswers);
+      const intern = new Intern(mockAnswers);
       const actual = intern.getRole();
 
       expect(actual).toEqual("Intern");
