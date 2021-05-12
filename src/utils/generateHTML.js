@@ -168,4 +168,9 @@ ${cardString}
 `;
 };
 
-module.exports = generateHTML;
+module.exports = {
+  generateHTML,
+  generateManagerCard,
+  generateEngineerCard,
+  generateInternCard,
+};

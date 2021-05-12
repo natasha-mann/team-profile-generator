@@ -7,7 +7,7 @@ const getAllTeamMembers = require("./getAllTeamMembers");
 const app = async () => {
   console.log("App started");
 
-  const initialQuestion = [
+  const initialQuestions = [
     {
       message: "What is the name of your team?",
       name: "teamName",
@@ -19,7 +19,7 @@ const app = async () => {
     },
   ];
 
-  const initialAnswers = await getAnswers(initialQuestion);
+  const initialAnswers = await getAnswers(initialQuestions);
 
   const manager = await createManager();
 
