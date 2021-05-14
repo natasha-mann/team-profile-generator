@@ -57,7 +57,7 @@ const generateEngineerCard = (teamMember) => {
       <li class="list-group-item fw-bold">
         GitHub:
         <span class="fw-normal"
-          ><a href="https://www.github.com/${teamMember.github}"
+          ><a href="https://www.github.com/${teamMember.github}" target="_blank"
             >${teamMember.github}</a
           ></span
         >
