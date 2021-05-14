@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`generateEngineerCard should return the expected HTML markup 1`] = `undefined`;
-
-exports[`generateHTML should return the expected HTML markup 1`] = `undefined`;
-
-exports[`generateInternCard should return the expected HTML markup 1`] = `undefined`;
-
-exports[`generateManagerCard should return the expected HTML markup 1`] = `undefined`;
