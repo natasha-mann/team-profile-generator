@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 
-const getAnswers = require("../getAnswers");
+const getAnswers = require("../utils/getAnswers");
 
 jest.mock("inquirer");
 
