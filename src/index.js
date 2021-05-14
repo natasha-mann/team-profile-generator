@@ -16,6 +16,13 @@ const init = async () => {
       message:
         "What would you like to name your HTML file? **Please don't include the .html",
       name: "fileName",
+      validate: function (fileName) {
+        const regex = /(\.html|\.)/g;
+        return (
+          !regex.test(fileName) ||
+          "Please ensure to only include the file name, without .html"
+        );
+      },
     },
   ];
 
