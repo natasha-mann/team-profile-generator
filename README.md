@@ -26,7 +26,7 @@ Please click [here](https://drive.google.com/file/d/1DYnDbgG0ct1htCtHjd-1MAen0rv
 
 ## Sample Generated HTML
 
-Please click [here]() to view the sample generated html file.
+Please click [here](https://github.com/natasha-mann/team-profile-generator/blob/master/sample.html) to view the sample generated html file.
 
 ## Questions
 
