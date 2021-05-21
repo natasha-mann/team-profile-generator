@@ -26,19 +26,15 @@ const init = async () => {
     },
   ];
 
-  const initialAnswers = await getAnswers(initialQuestions);
+  const { teamName, fileName } = await getAnswers(initialQuestions);
 
   const manager = await createManager();
 
   const teamMembers = await getAllTeamMembers();
 
-  const generatedHTML = generateHTML(
-    initialAnswers.teamName,
-    manager,
-    teamMembers
-  );
+  const generatedHTML = generateHTML(teamName, manager, teamMembers);
 
-  writeToFile(initialAnswers.fileName, generatedHTML);
+  writeToFile(fileName, generatedHTML);
 };
 
 init();
