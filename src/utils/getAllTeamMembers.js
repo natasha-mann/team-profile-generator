@@ -25,9 +25,7 @@ const promptQuestionAndGetAnswers = async () => {
     },
   ];
 
-  const answers = await getAnswers(questions);
-
-  return answers;
+  return await getAnswers(questions);
 };
 
 const getAllTeamMembers = async () => {
@@ -36,17 +34,17 @@ const getAllTeamMembers = async () => {
   let inProgress = true;
 
   while (inProgress) {
-    const answers = await promptQuestionAndGetAnswers();
+    const { employeeType } = await promptQuestionAndGetAnswers();
 
-    if (answers.employeeType === "none") {
+    if (employeeType === "none") {
       inProgress = false;
     } else {
-      if (answers.employeeType === "engineer") {
+      if (employeeType === "engineer") {
         const engineer = await createEngineer();
         teamMembers.push(engineer);
       }
 
-      if (answers.employeeType === "intern") {
+      if (employeeType === "intern") {
         const intern = await createIntern();
         teamMembers.push(intern);
       }
