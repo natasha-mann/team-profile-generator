@@ -6,6 +6,9 @@ const createEngineer = async () => {
     {
       message: "What is the engineer's name?",
       name: "name",
+      validate: function (name) {
+        return /[^0-9]/.test(name) || "Please enter the engineer's name.";
+      },
     },
     {
       message: "What is the engineer's employee ID number?",
@@ -17,6 +20,9 @@ const createEngineer = async () => {
     {
       message: "What is the engineer's github username?",
       name: "github",
+      validate: function (github) {
+        return /[^0-9]/.test(github) || "Please enter a github username.";
+      },
     },
     {
       message: "What is the engineer's email address?",

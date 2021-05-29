@@ -6,6 +6,9 @@ const createIntern = async () => {
     {
       message: "What is the intern's name?",
       name: "name",
+      validate: function (name) {
+        return /[^0-9]/.test(name) || "Please enter the intern's name.";
+      },
     },
     {
       message: "What is the intern's employee ID number?",
@@ -17,6 +20,9 @@ const createIntern = async () => {
     {
       message: "Which school is the intern from?",
       name: "school",
+      validate: function (school) {
+        return /[^0-9]/.test(school) || "Please enter the intern's school.";
+      },
     },
     {
       message: "What is the intern's email address?",

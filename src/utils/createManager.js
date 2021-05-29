@@ -6,6 +6,9 @@ const createManager = async () => {
     {
       message: "What is the name of the team manager?",
       name: "name",
+      validate: function (name) {
+        return /[^0-9]/.test(name) || "Please enter the manager's name.";
+      },
     },
     {
       message: "What is the manager's employee ID number?",

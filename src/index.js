@@ -11,11 +11,13 @@ const init = async () => {
     {
       message: "What is the name of your team?",
       name: "teamName",
+      default: "My Team",
     },
     {
       message:
         "What would you like to name your HTML file? **Please don't include the .html",
       name: "fileName",
+      default: "team",
       validate: function (fileName) {
         const regex = /(\.html|\.)/g;
         return (
